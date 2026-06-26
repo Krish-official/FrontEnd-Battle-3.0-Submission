@@ -32,7 +32,7 @@ export function Footer() {
         className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-forsythia text-oceanic w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-xl"
         aria-label="Back to top"
       >
-        <img src="/assets/svgs/chevron-up-solid.svg" alt="" className="w-6 h-6" />
+        <img src="/assets/svgs/chevron-up.svg" alt="" className="w-6 h-6" />
       </button>
 
       <div className="container mx-auto px-4">
