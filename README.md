@@ -40,9 +40,9 @@ This project was built with a focus on:
 
 | Resource             | Link                                         |
 | -------------------- | -------------------------------------------- |
-| 🌐 Live Website      | [YOUR_VERCEL_LINK](YOUR_VERCEL_LINK)         |
-| 💻 GitHub Repository | https://github.com/Krish-official/FrontEnd-Battle-3.0-Submission       |
-| 🎥 Demo Video        | [YOUR_DEMO_VIDEO_LINK](YOUR_DEMO_VIDEO_LINK) |
+| 🌐 Live Website      | https://front-end-battle-3-0-submission.vercel.app/         |
+| 💻 GitHub Repository | https://github.com/Krish-official/FrontEnd-Battle-3.0-Submission                                        |
+| 🎥 Demo Video        | Link already provided                        |
 
 ---
 
