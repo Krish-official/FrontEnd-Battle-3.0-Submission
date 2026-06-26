@@ -1,0 +1,217 @@
+/* ============================================
+   ENTRANCE ANIMATIONS - 500ms MAX TOTAL
+   ============================================ */
+
+/* Initial loader (150ms) */
+@keyframes pageLoad {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.page-enter {
+  animation: pageLoad 150ms ease-out;
+}
+
+/* Hero stagger (350ms total) */
+@keyframes heroSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-title {
+  animation: heroSlideUp 300ms ease-out 50ms backwards;
+}
+
+.hero-subtitle {
+  animation: heroSlideUp 300ms ease-out 150ms backwards;
+}
+
+.hero-cta {
+  animation: heroSlideUp 300ms ease-out 250ms backwards;
+}
+
+/* ============================================
+   MICRO-INTERACTIONS (150-200ms)
+   ============================================ */
+
+.button-hover {
+  transition: all 180ms ease-out;
+}
+
+.button-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card {
+  transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+}
+
+.pricing-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(17, 76, 90, 0.15);
+}
+
+/* Toggle switch animation */
+.billing-toggle {
+  transition: transform 180ms ease-out;
+}
+
+.billing-toggle.active {
+  transform: translateX(100%);
+}
+
+/* Currency dropdown */
+.currency-option {
+  transition: background-color 150ms ease-out, color 150ms ease-out;
+}
+
+.currency-option:hover {
+  background-color: var(--forsythia);
+  color: var(--oceanic);
+}
+
+/* ============================================
+   STRUCTURAL LAYOUT REFLOWS (300-400ms)
+   ============================================ */
+
+/* Bento to Accordion transition */
+.feature-container {
+  transition: all 350ms ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .bento-grid {
+    animation: gridToAccordion 400ms ease-in-out;
+  }
+}
+
+@keyframes gridToAccordion {
+  0% {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  100% {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Accordion panel expand */
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 350ms ease-in-out, padding 350ms ease-in-out;
+}
+
+.accordion-panel.open {
+  max-height: 500px;
+  padding: 1.5rem;
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+/* Hardware acceleration */
+.hw-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Prevent layout thrashing */
+.price-value {
+  contain: layout style;
+}
+
+/* Reduce paint areas */
+.isolated-update {
+  isolation: isolate;
+}
+
+/* ============================================
+   PAGE LOADER (400ms total)
+   ============================================ */
+
+.page-loader {
+  animation: fadeOut 150ms ease-out 400ms forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes loading-bar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-loading-bar {
+  animation: loading-bar 400ms ease-out forwards;
+}
+
+/* ============================================
+   REFINED TIMING TO MATCH DEMO.MP4
+   ============================================ */
+
+/* Hero entrance - staggered by 100ms each */
+.hero-title {
+  animation: heroSlideUp 300ms cubic-bezier(0.16, 1, 0.3, 1) 50ms backwards;
+}
+
+.hero-subtitle {
+  animation: heroSlideUp 300ms cubic-bezier(0.16, 1, 0.3, 1) 150ms backwards;
+}
+
+.hero-cta {
+  animation: heroSlideUp 300ms cubic-bezier(0.16, 1, 0.3, 1) 250ms backwards;
+}
+
+/* Pricing card hover - EXACTLY 180ms */
+.pricing-card {
+  transition: 
+    transform 180ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 180ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Bento to Accordion - EXACTLY 350ms */
+.accordion-panel {
+  transition: 
+    max-height 350ms cubic-bezier(0.4, 0, 0.6, 1),
+    padding 350ms cubic-bezier(0.4, 0, 0.6, 1),
+    opacity 350ms cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Button hover - 150ms */
+.button-hover {
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-hover:hover {
+  transform: translateY(-2px);
+}
